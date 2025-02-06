@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("postgresql://neondb_owner:npg_KXWG0tBrI7Yi@ep-crimson-term-a26m6iqc.eu-central-1.aws.neon.tech/graph_left_award_676673"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "postgresql://neondb_owner:npg_KXWG0tBrI7Yi@ep-crimson-term-a26m6iqc.eu-central-1.aws.neon.tech/graph_left_award_676673"))
 }
 
 # Password validation
