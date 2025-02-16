@@ -20,20 +20,9 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name="blog_posts"
-    )
+        Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_author"
-    )
+        User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
-    approved = BooleanField()
+    approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-
-    # title = models.CharField(max_length=200, unique=True)
-    # slug = models.SlugField(max_length=200, unique=True)
-    # author = models.
-    # content = models.TextField()
-    # 
-    # status = models.IntegerField(choices=STATUS, default=0)
-    # excerpt = models.TextField(blank=True)
-    # updated_on = models.DateTimeField(auto_now=True)
